@@ -12,5 +12,11 @@ class HomeController
         global $baseUrl;
         include "Views/information.php";
     }
+
+    public function exam()
+    {
+        global $baseUrl;
+        include "Views/exam.php";
+    }
     
 }

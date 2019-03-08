@@ -12,4 +12,10 @@ switch($url)
     $controller = new HomeController();
     echo $controller->page();
     break;
+    case "bai-thi":
+    $controller = new HomeController();
+    echo $controller->exam();
+    break;
+    default:
+    echo "404 page not found";
 }

@@ -13,18 +13,24 @@
         <h5 class="my-0 mr-md-auto font-weight-normal">TheExamOnline Vanh</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a href="#" class="p-2 text-dark">Trang chủ</a>
-            <a href="#" class="p-2 text-dark">Thông tin cá nhân</a>
-            <a href="#" class="p-2 text-dark">Dùng thử</a>
         </nav>
     </div>
     <div class="container">
         <div class="card-deck mb-3 text-center">
-            <div class="card-header">
+            <div class="card-header col-md-4">
                 <img src="https://www.fancyhands.com/images/default-avatar-250x250.png" width="50%" alt="">
                 <h4 class="my-0 font-weight-normal">Tài khoản : Trần Việt Anh</h4>
             </div>
-            <div class="card-body">
-
+            <div class="card-body col-md-8 d-flex flex-wrap">
+                <div class="col-md-6">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success">PHP</strong>
+                            <h3 class="mb-9">Bài test 1</h3>
+                            <button class="btn btn-lg btn-primary btn-block">Làm ngay</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="col-lg-4 mx-auto formLogin">
-            <form action="#" method="POST" novalidate>
+            <form action="./login" method="POST" novalidate>
                 <div class="form-group">
                     <label class="label">Tên người dùng : </label>
                     <input type="text" class="form-control" name="username" placeholder="Nhập tên người dùng ...">

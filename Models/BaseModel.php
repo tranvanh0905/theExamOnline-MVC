@@ -25,5 +25,9 @@ class BaseModel
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS, get_class($this));
     }
-
+    public function first()
+    {
+        $array = $this->get();
+        return $array[0];
+    }
 }

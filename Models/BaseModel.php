@@ -30,4 +30,11 @@ class BaseModel
         $array = $this->get();
         return $array[0];
     }
+    public static function rawQuery($sqlQuery)
+    {
+        $model = new static();
+        $stmt = $model->connect->prepare($sqlQuery);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

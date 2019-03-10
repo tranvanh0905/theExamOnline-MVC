@@ -19,7 +19,10 @@
         <div class="card-deck mb-3 text-center">
             <div class="card-header col-md-4">
                 <img src="https://www.fancyhands.com/images/default-avatar-250x250.png" width="50%" alt="">
-                <h4 class="my-0 font-weight-normal">Tài khoản : Trần Việt Anh</h4>
+                <h4 class="my-0 font-weight-normal mb-2">Tài khoản : <?= $userLogin->username; ?></h4>
+                <h5 class="my-0 font-weight-normal mb-2">Email : <?= $userLogin->email; ?></h5>
+                <h5 class="my-0 font-weight-normal mb-2">Số điện thoại : <?= $userLogin->phone_number; ?></h5>
+                <h5 class="my-0 font-weight-normal mb-2">Ngày sinh : <?= $userLogin->birthdate; ?></h5>
             </div>
             <div class="card-body col-md-8 d-flex flex-wrap">
                 <div class="col-md-6">

@@ -11,6 +11,7 @@ class HomeController
     public function page()
     {
         global $baseUrl;
+        $userLogin = User::where("username","=",$_SESSION['auth']['username'])->first();
         include "Views/information.php";
     }
 
@@ -20,6 +21,12 @@ class HomeController
         include "Views/exam.php";
     }
     
+    public function registerPage()
+    {
+        global $baseUrl;
+        include "Views/register.php";
+    }
+
     public function loginTo()
     {
         global $baseUrl;
@@ -32,9 +39,11 @@ class HomeController
                 "username"=>$usernameLogin->username,
                 "email"=>$usernameLogin->email,
                 "role"=>$usernameLogin->role,
+                "phone_number"=>$usernameLogin->phone_number,
+                "birthdate"=>$usernameLogin->birthdate,
             ];
             header("Location:./thong-tin");die;
         }
-        header("location:./");
+        header("location:./?msg=Vui lòng xem lại tài khoản và mật khẩu");
     }
 }

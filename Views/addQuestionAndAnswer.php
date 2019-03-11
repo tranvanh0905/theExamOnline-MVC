@@ -15,7 +15,7 @@
             <form action="./addQuestion" method="POST" novalidate>
                 <div class="form-group">
                     <label class="label">Môn học :  </label>
-                    <select class="form-control" name="id_exam_categories">
+                    <select class="form-control" name="id_exam">
                         <?php foreach($exam as $item): ?>
                         <option value="<?= $item->id; ?>"><?= $item->title; ?></option>
                         <?php endforeach; ?>

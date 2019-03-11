@@ -45,7 +45,7 @@ switch($url)
     break;
     case "addQuestion":
     $controller = new ExamController();
-    echo $controller->addChoice();
+    echo $controller->addQuestion();
     break;
     default:
     echo "404 page not found";

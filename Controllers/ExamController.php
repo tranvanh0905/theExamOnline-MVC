@@ -47,47 +47,48 @@ class ExamController
         $values = " ";
         foreach($_POST as $key=>$value)
         {
+            if($key == "content"){
+                continue;
+            }
             $columns .= "" .$key .",";
             $values .= "'" .$value ."',";
         }
-        $coulmns = rtrim($coulmns,",");
+        $columns = rtrim($columns,",");
         $values = rtrim($values,",");
         $sqlQuery = "insert into " .$model->table
                     . " ($columns) values ($values)";
         Question::rawQuery($sqlQuery);
         return $this->addChoice();
     }
-
+    
     public function addChoice()
     {
         $model = new Choice();
         $columns = " ";
         $values = " ";
-        $post = $_POST['content'];
-
-        foreach($_POST['content'] as $key=>$value)
-        {
-            $columns .= "" .$key .",";
-            $values .= "'" .$value ."',";
-            var_dump($columns);
-        }
-
-
         foreach($_POST as $key=>$value)
         {
-            if($key == 'title')
+            if($key == "id_exam")
             {
                 continue;
+            }else if($key == "title")
+            { 
+                continue;
+            }else if($key == "content")
+            {
+                $columns .= " " .$key .",";
+                for($i = 0; $i<4; $i++)
+                {
+                    $values .= "('" .$value[$i] ."'),";
+                }
             }
-            
-            $columns .= "" .$key .",";
-            $values .= "'" .$value ."',";
-        }
-        $coulmns = rtrim($coulmns,",");
-        $values = rtrim($values,",");
-        $sqlQuery = "insert into " .$model->table
-                    . " ($columns) values ($values)";
-        Choice::rawQuery($sqlQuery);
-    }
 
+        }
+        $columns  = rtrim($columns,",");
+        $values  = rtrim($values,",");
+        $sqlQuery = "insert into " .$model->table
+                . " ($columns) values " .$values;
+        Choice::rawQuery($sqlQuery);
+
+    }
 }

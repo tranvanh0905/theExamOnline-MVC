@@ -27,6 +27,19 @@ class HomeController
         include "Views/register.php";
     }
 
+    public function addExamCatePage()
+    {
+        global $baseUrl;
+        include "Views/addExamCategories.php";
+    }
+
+    public function addQuestionAndAnswer()
+    {
+        global $baseUrl;
+        $exam = Exam::all()->get();
+        include "Views/addQuestionAndAnswer.php";
+    }
+
     public function loginTo()
     {
         global $baseUrl;

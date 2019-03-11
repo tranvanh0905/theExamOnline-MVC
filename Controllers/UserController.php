@@ -17,6 +17,11 @@ class UserController
         $sqlQuery = "insert into " .$model->table
                     . "($columns) values ($values)";
         User::rawQuery($sqlQuery);
+        return $this->link();
+    }
+    
+    public function link()
+    {
         header("Location:thong-tin");
     }
 }

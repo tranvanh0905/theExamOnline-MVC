@@ -13,6 +13,13 @@ class BaseModel
                                 . " where $column $operation '$value'";
         return $model;
     }
+    public static function rawQuery($sqlQuery)
+    {
+        $model = new static();
+        $stmt = $model->connect->prepare($sqlQuery);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
     public static function all()
     {
         $model = new static();
@@ -30,11 +37,9 @@ class BaseModel
         $array = $this->get();
         return $array[0];
     }
-    public static function rawQuery($sqlQuery)
+    public function orderBy($column, $sort)
     {
-        $model = new static();
-        $stmt = $model->connect->prepare($sqlQuery);
-        $stmt->execute();
-        return $stmt->fetchAll();
+        $this->queryBuilder .= " ORDER BY $column $sort";
+        return $this;
     }
 }

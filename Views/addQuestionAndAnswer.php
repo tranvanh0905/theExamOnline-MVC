@@ -41,6 +41,7 @@
                     <label class="label">Trả lời 4 :  </label>
                     <input type="text" class="form-control" name="content[]" placeholder="Nhập câu trả lời ...">
                 </div>
+                    <input type="hidden" name="id_question">
                 <button  class="form-control">Thêm câu hỏi </button>
             </form>
         </div>

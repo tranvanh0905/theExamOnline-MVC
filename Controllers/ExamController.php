@@ -49,6 +49,9 @@ class ExamController
         {
             if($key == "content"){
                 continue;
+            }else if($key == "id_question")
+            {
+                continue;
             }
             $columns .= "" .$key .",";
             $values .= "'" .$value ."',";
@@ -64,31 +67,29 @@ class ExamController
     public function addChoice()
     {
         $model = new Choice();
+        $id_ques  = Question::all()->orderBy('id','DESC')->first();
         $columns = " ";
         $values = " ";
         foreach($_POST as $key=>$value)
         {
-            if($key == "id_exam")
+            if($key == "id_exam" || $key == "title")
             {
                 continue;
-            }else if($key == "title")
-            { 
-                continue;
-            }else if($key == "content")
+            }
+            $columns .= " " .$key .",";
+            if($key == "content")
             {
-                $columns .= " " .$key .",";
                 for($i = 0; $i<4; $i++)
                 {
-                    $values .= "('" .$value[$i] ."'),";
+                    $values .= "('" .$value[$i] ."','" .$id_ques->id ."'),";
                 }
             }
-
         }
         $columns  = rtrim($columns,",");
         $values  = rtrim($values,",");
         $sqlQuery = "insert into " .$model->table
                 . " ($columns) values " .$values;
         Choice::rawQuery($sqlQuery);
-
+        var_dump($sqlQuery);die;
     }
 }

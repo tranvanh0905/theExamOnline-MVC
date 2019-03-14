@@ -25,24 +25,50 @@
                     <label class="label">Câu hỏi :  </label>
                     <input type="text" class="form-control" name="title" placeholder="Nhập câu hỏi ...">
                 </div>
-                <div class="form-group">
-                    <label class="label">Trả lời 1 :  </label>
-                    <input type="text" class="form-control" name="content[]" placeholder="Nhập câu trả lời ...">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="radio" name="correct" value="A">
+                        </div>
+                    </div>
+                    <input type="text" name="content[]" class="form-control" placeholder="Nhập câu trả lời ..." >
                 </div>
-                <div class="form-group">
-                    <label class="label">Trả lời 2 :  </label>
-                    <input type="text" class="form-control" name="content[]" placeholder="Nhập câu trả lời ...">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="radio" name="correct" value="B">
+                        </div>
+                    </div>
+                    <input type="text" name="content[]" class="form-control" placeholder="Nhập câu trả lời ..." >
                 </div>
-                <div class="form-group">
-                    <label class="label">Trả lời 3 :  </label>
-                    <input type="text" class="form-control" name="content[]" placeholder="Nhập câu trả lời ...">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="radio" name="correct" value="C">
+                        </div>
+                    </div>
+                    <input type="text" name="content[]" class="form-control" placeholder="Nhập câu trả lời ..." >
                 </div>
-                <div class="form-group">
-                    <label class="label">Trả lời 4 :  </label>
-                    <input type="text" class="form-control" name="content[]" placeholder="Nhập câu trả lời ...">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="radio" name="correct" value="D">
+                        </div>
+                    </div>
+                    <input type="text" name="content[]" class="form-control" placeholder="Nhập câu trả lời ..." >
                 </div>
                     <input type="hidden" name="id_question">
                 <button  class="form-control">Thêm câu hỏi </button>
+                <?php
+                    if(isset($_GET['msg']))
+                    {
+                        echo $_GET['msg'];
+                    }else
+                    {
+                        echo " ";
+                    }
+                ?>
+                
             </form>
         </div>
     </div>

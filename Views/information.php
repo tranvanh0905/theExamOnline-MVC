@@ -26,15 +26,19 @@
                 <h5 class="my-0 font-weight-normal mb-2">Ngày sinh : <?= $userLogin->birthdate; ?></h5>
             </div>
             <div class="card-body col-md-8 d-flex flex-wrap">
+            <?php foreach($theExam as $item): ?>
                 <div class="col-md-6">
                     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-success">PHP</strong>
-                            <h3 class="mb-9">Bài test 1</h3>
-                            <button class="btn btn-lg btn-primary btn-block">Làm ngay</button>
+                            <strong class="d-inline-block mb-2 text-success"><?= $item->getExamCategories()->title ?></strong>
+                            <h3 class="mb-9"><?= $item->title ?></h3>
+                            <a href="#">
+                                <button class="btn btn-lg btn-primary btn-block">Làm ngay</button>
+                            </a>
                         </div>
                     </div>
                 </div>
+            <?php endforeach; ?>
             </div>
         </div>
     </div>

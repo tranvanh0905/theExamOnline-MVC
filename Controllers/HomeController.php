@@ -12,12 +12,14 @@ class HomeController
     {
         global $baseUrl;
         $userLogin = User::where("username","=",$_SESSION['auth']['username'])->first();
+        $theExam = Exam::all()->get();
         include "Views/information.php";
     }
 
     public function exam()
     {
         global $baseUrl;
+        $ques = Question::where("id_exam","=","1")->get();
         include "Views/exam.php";
     }
     

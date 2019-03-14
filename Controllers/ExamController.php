@@ -47,9 +47,7 @@ class ExamController
         $values = " ";
         foreach($_POST as $key=>$value)
         {
-            if($key == "content"){
-                continue;
-            }else if($key == "id_question")
+            if($key == "id_question" || $key == "content")
             {
                 continue;
             }
@@ -72,7 +70,7 @@ class ExamController
         $values = " ";
         foreach($_POST as $key=>$value)
         {
-            if($key == "id_exam" || $key == "title")
+            if($key == "id_exam" || $key == "title" || $key == "correct")
             {
                 continue;
             }
@@ -89,7 +87,14 @@ class ExamController
         $values  = rtrim($values,",");
         $sqlQuery = "insert into " .$model->table
                 . " ($columns) values " .$values;
-        Choice::rawQuery($sqlQuery);
+        Choice::rawQuery($sqlQuery); 
         var_dump($sqlQuery);die;
+        header("location:them-cau-hoi?msg=Thêm thành công");
+    }
+    
+    public function letStart()
+    {
+        $_SESSION['score'] = 0;
+        
     }
 }

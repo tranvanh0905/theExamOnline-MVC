@@ -20,17 +20,19 @@
             <a href="#" class="p-2 text-dark">Trang chủ</a>
         </nav>
     </div>
-    <div class="container mt-5">
-        <div class="jumbotron">
-            <h1 class="">Câu 1 : </h1>
-            <h4 class="">Đây là tiêu đề của câu hỏi</h4>
-            <div class="d-block my-3">
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input">      
-                    <label class="custom-control-label lead">fadsfasdfsadfsadfasdfasdfasdfsad</label>          
+    <div class="container">
+        <h1 class="mt-5">Câu 1:</h1>
+        <h3>Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with .</h3>
+        <form>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox">
+                    </div>
                 </div>
+                <input type="text" class="form-control">
             </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>
